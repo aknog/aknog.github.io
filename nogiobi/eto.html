@@ -49,6 +49,12 @@ body {
 .user-profile-twitter {
 	text-align: center;
 }
+.avatar_url {
+	width: 24px;
+	height: 24px;
+	margin: 0 3px 0 0;
+	filter: drop-shadow(0px 0px 2px white);
+}
 .upcont {
 	max-width: 400px;
 }
@@ -64,7 +70,8 @@ $('a.uid').on('click', function(event) {
 	event.preventDefault();
 });
 $('a.uid').tooltipster({
-	content: '<small>Loading...</small>',
+	//content: '<small>Loading...</small>',
+	content: '<i class="fas fa-spinner fa-spin fa-2x"></i>',
 	contentAsHTML: true,
 	theme: 'tooltipster-borderless',
 	functionBefore: function(instance, helper) {
@@ -76,17 +83,18 @@ $('a.uid').tooltipster({
 				dataType: 'json',
 				cache: true,
 			}).done(function(data) {
-				//console.log(data);
+				console.log(data);
 				name = data.name;
 				imgurl = data.image;
 				desc = data.description;
+				avatar_url = data.avatar_url;
 				if (data.sns_list != null) {
 					twurl = data.sns_list[0].url;
 				} else {
 					twurl = '';
 				}
 				html = '';
-				html += '<div class="user-profile-view-screen-id">'+name+'</div>';
+				html += '<div class="user-profile-view-screen-id"><img class="avatar_url" src="'+avatar_url+'">'+name+'</div>';
 				html += '<div class="user-profile-view-img"><img class="profileimg rounded" src="'+imgurl+'"></div>';
 				if (twurl) {
 					html += '<div class="user-profile-twitter"><button type="button" class="btn btn-light btn-sm"><a href="'+twurl+'"><i class="fab fa-twitter"></i> Twitter</a></button></div>';
