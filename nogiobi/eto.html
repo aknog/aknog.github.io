@@ -58,6 +58,10 @@ body {
 .upcont {
 	max-width: 400px;
 }
+
+#loading {
+	margin: 10px;
+}
 </style>
 </head>
 
@@ -71,7 +75,7 @@ $('a.uid').on('click', function(event) {
 });
 $('a.uid').tooltipster({
 	//content: '<small>Loading...</small>',
-	content: '<i class="fas fa-spinner fa-spin fa-2x"></i>',
+	content: '<div id="loading"><i class="fas fa-spinner fa-spin fa-2x"></i></div>',
 	contentAsHTML: true,
 	theme: 'tooltipster-borderless',
 	functionBefore: function(instance, helper) {
