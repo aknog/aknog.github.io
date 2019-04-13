@@ -28,6 +28,30 @@ body {
 .page-header {
 	margin: 10px;
 }
+
+.profileimg {
+	width: 150px;
+	height: 150px;
+}
+.user-profile-view-screen-id {
+	margin: 5px auto;
+	text-align: center;
+	font-weight: bold;
+}
+.user-profile-view-img {
+	margin: 5px auto;
+	text-align: center;
+}
+.user-profile-description {
+	font-size: small;
+	margin: 5px;
+}
+.user-profile-twitter {
+	text-align: center;
+}
+.upcont {
+	max-width: 400px;
+}
 </style>
 </head>
 
@@ -61,33 +85,7 @@ $('a.uid').tooltipster({
 				} else {
 					twurl = '';
 				}
-				html = `
-				<style>
-				.profileimg {
-					width: 150px;
-					height: 150px;
-				}
-				.user-profile-view-screen-id {
-					margin: 5px auto;
-					text-align: center;
-					font-weight: bold;
-				}
-				.user-profile-view-img {
-					margin: 5px auto;
-					text-align: center;
-				}
-				.user-profile-description {
-					font-size: small;
-					margin: 5px;
-				}
-				.user-profile-twitter {
-					text-align: center;
-				}
-				.upcont {
-					max-width: 400px;
-				}
-				</style>
-				`;
+				html = '';
 				html += '<div class="user-profile-view-screen-id">'+name+'</div>';
 				html += '<div class="user-profile-view-img"><img class="profileimg rounded" src="'+imgurl+'"></div>';
 				if (twurl) {
