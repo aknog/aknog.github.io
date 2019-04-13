@@ -48,13 +48,19 @@ $('a.uid').tooltipster({
 		var uid = origin.data('uid');
 		if (origin.data('loaded') !== true) {
 			$.get({
-				url: 'https://cors.io/?https://www.showroom-live.com/room/user_profile?room_id=1&user_id='+uid,
-				cache: true
+				url: 'https://cors.io/?https://www.showroom-live.com/api/user/profile?user_id='+uid,
+				dataType: 'json',
+				cache: true,
 			}).done(function(data) {
-				name = $(data).find('#user-profile-view-screen-id').text();
-				imgurl = $(data).find('#user-profile-view-img').attr('src');
-				desc = $(data).find('#user-profile-description').text();
-				twurl = $(data).find('a.btn-profile-twitter').attr('href');
+				//console.log(data);
+				name = data.name;
+				imgurl = data.image;
+				desc = data.description;
+				if (data.sns_list != null) {
+					twurl = data.sns_list[0].url;
+				} else {
+					twurl = '';
+				}
 				html = `
 				<style>
 				.profileimg {
