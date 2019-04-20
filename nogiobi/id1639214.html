@@ -105,8 +105,12 @@ $('a.uid').tooltipster({
 				}
 				html += '<div class="user-profile-description">'+desc+'</div>';
 				html = '<div class="upcont">'+html+'</div>';
-				instance.content(html);
-				origin.data('loaded', true);
+				//instance.content(html);
+				//origin.data('loaded', true);
+				$('*[data-uid="'+uid+'"]').tooltipster('content', html);
+				$('*[data-uid="'+uid+'"]').tooltipster('option', 'trigger', 'hover');
+				$('*[data-uid="'+uid+'"]').tooltipster('option', 'delay', '100');
+				$('*[data-uid="'+uid+'"]').data('loaded', true);
 			});
 		}
 	},
