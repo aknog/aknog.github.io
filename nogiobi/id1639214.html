@@ -72,9 +72,9 @@ body {
 /*$('li.user').each(function(index, element) {
 	var self = $(this);
 	var uid = self.text();
-	setTimeout(function () {
+	//setTimeout(function () {
 		$.get({
-			url: 'https://cors.io/?https://www.showroom-live.com/api/user/profile?user_id='+uid,
+			url: 'https://cors-anywhere.herokuapp.com/https://www.showroom-live.com/api/user/profile?user_id='+uid,
 			dataType: 'json',
 			cache: true,
 		}).done(function(data) {
@@ -83,18 +83,20 @@ body {
 				var twurl = data.sns_list[0].url;
 				$.ajax({
 					type: "HEAD",
-					url: 'https://cors.io/?'+twurl,
-					dataType: 'html',
+					url: 'https://cors-anywhere.herokuapp.com/'+twurl,
+					//dataType: 'html',
 					cache: true,
 				}).done(function(message, text, response) {
-					console.log(response);
-					matches = data.match(/<title>.*?\(@(.+?)\).*<\/title>/);
-					twac = matches[1];
+					//console.log(response);
+					//matches = data.match(/<title>.*?\(@(.+?)\).*<\/title>/);
+					//twac = matches[1];
+					twac = response.getResponseHeader('x-final-url');
+					twac = twac.replace(/^.+\//, '');
 					self.append(' <i class="fab fa-twitter"></i> <a href="https://twitter.com/'+twac+'">'+twac+'</a>');
 				});
 			}
 		});
-	}, index * 1000);
+	//}, index * 1000);
 });*/
 $('a.uid').on('click', function(event) {
 	event.preventDefault();
@@ -109,6 +111,7 @@ $('a.uid').tooltipster({
 		var uid = origin.data('uid');
 		if (origin.data('loaded') !== true) {
 			$.get({
+				//url: 'https://cors-anywhere.herokuapp.com/https://www.showroom-live.com/api/user/profile?user_id='+uid,
 				url: 'https://cors.io/?https://www.showroom-live.com/api/user/profile?user_id='+uid,
 				dataType: 'json',
 				cache: true,
