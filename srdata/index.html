@@ -364,7 +364,7 @@ $('a.info').on('click', function(event) {
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">このリストについて</h5>
@@ -375,6 +375,20 @@ $('a.info').on('click', function(event) {
       <div class="modal-body">
 		<p>SHOWROOMでの乃木坂46・欅坂46・日向坂46の配信データをまとめたものです。</p>
 		<p>2018/11/15以降のデータは3グループとも網羅しているはずですが、2018/09/14から2018/11/14までのデータは乃木坂46のみでギフト額には一部抜けがあります。</p>
+		<p>ヘッダー(黒い部分)をクリックすることで、その数値順に並び変わります。再度クリックすることで降順/昇順が切り替わります。</p>
+		<p>ルーム名のグループロゴ(◢)やタグ('のぎおび'など)をクリックすると絞り込めます。また、ヘッダー下の入力欄でリストを絞り込むできます。</p>
+		<p>入力例：
+		<ul>
+		<li>ルーム検索欄に「白石」 → ルーム名に"白石"を含む配信を表示</li>
+		<li>ルーム検索欄に「齋藤 && 乃木坂46」 → ルーム名に"齋藤"と"乃木坂46"を含む配信を表示</li>
+		<li>ルーム検索欄に「白石|齋藤」 → ルーム名に"白石"または"齋藤"を含む配信を表示</li>
+		<li>ルーム検索欄に「齋藤 && !tag:乃木坂46」 → ルーム名に"齋藤"を含み、乃木坂46のタグが付いてない配信を表示</li>
+		<li>ルーム検索欄に「/^.田/」 → ルーム名で2文字目に"田"を含む配信を表示 (正規表現)</li>
+		<li>視聴者数検索欄に「<10000」 → 視聴者数が10000より少ない配信を表示</li>
+		<li>視聴者数検索欄に「>=50000」 → 視聴者数が50000以上の配信を表示</li>
+		<li>視聴者数検索欄に「20000 - 30000」 → 視聴者数が20000以上30000以下の配信を表示</li>
+		<li>開始時間検索欄に「>=2019」 → 開始時間が2019年以降の配信を表示</li>
+		</ul></p>
       </div>
     </div>
   </div>
