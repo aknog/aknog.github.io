@@ -174,7 +174,8 @@
 				result = wo.sort2Hash_encodeHash( c, tableId, component, value, rawValue || value );
 			}
 			if ( result === false ) {
-				result = '&' + component + '[' + tableId + ']=' + value;
+				//result = '&' + component + '[' + tableId + ']=' + value;
+				result = '&' + component + '-' + tableId + '=' + value;
 			}
 			return result;
 		},
@@ -187,7 +188,8 @@
 				result = wo.sort2Hash_decodeHash( c, tableId, component );
 			}
 			if ( result === false ) {
-				result = s2h.getParam( component + '[' + tableId + ']' );
+				//result = s2h.getParam( component + '[' + tableId + ']' );
+				result = s2h.getParam( component + '-' + tableId  );
 			}
 			return result || '';
 		},
@@ -201,7 +203,8 @@
 			}
 			if ( result === false ) {
 				// parameter example: 'sort[table0]=0,0'
-				result = s2h.removeParam( component + '[' + tableId + ']', hash );
+				//result = s2h.removeParam( component + '[' + tableId + ']', hash );
+				result = s2h.removeParam( component + '-' + tableId, hash );
 			}
 			return result || '';
 		},
@@ -244,11 +247,12 @@
 				window.location.replace(baseUrl + newHash);
 			} else {
 				// Add updated hash
-				newHash = newHash.replace('&sort[main]=1-1', '');
+				newHash = newHash.replace('&sort-main=1-1', '');
 				var baseUrl = window.location.href.split(hashChar)[0];
 				var newUrl = baseUrl + newHash;
 				newUrl = newUrl.replace(/#$/, '');
 				$('.copy').attr('data-clipboard-text', newUrl);
+				//$('#url').val(newUrl);
 				//console.log(newUrl);
 				//window.location.hash = newHash;
 
