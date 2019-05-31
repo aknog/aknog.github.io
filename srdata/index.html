@@ -192,30 +192,31 @@ input[type="search"]::-webkit-search-cancel-button {
 	filter: drop-shadow(0px 0px 2px DarkGray);
 }
 
-button.info {
+button.icontip {
 	color: white;
 	background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-	padding: 0 7.5px 0 0;
+	background-repeat:no-repeat;
+	border: solid 0px white;
+	cursor:pointer;
+	overflow: hidden;
+	outline:none;
+	margin: 0 5px 0 0;
 	float: left;
+	vertical-align: middle;
+	border-radius: 5px;
+}
+button.info {
+	margin: 0 7.5px 0 0;
 }
 button.copy {
-	color: white;
-	background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-	padding: 0;
-	float: left;
+	margin: 0;
+}
+button.icontip:hover {
+  background-color: grey;
 }
 </style>
-</head><body><table id="main" class="table table-hover table-sm table-striped"><thead class="thead-dark"><tr>
+</head><body>
+<!--input type="text" id="url" name="url" size="400"--><table id="main" class="table table-hover table-sm table-striped"><thead class="thead-dark"><tr>
 	<th scope="row" class="">
 	<button type="button" class="info icontip" data-toggle="modal" data-target="#exampleModal" title="このリストについて">
 	<i class="fas fa-info-circle"></i>
@@ -437,7 +438,7 @@ $('a.info').on('click', function(event) {
 		<li>視聴者数検索欄に「>=50000」 → 視聴者数が50000以上の配信を表示</li>
 		<li>視聴者数検索欄に「20000 to 30000」 → 視聴者数が20000以上30000以下の配信を表示</li>
 		<li>タワー数検索欄に「"10"」 → タワー数が10本の配信を表示</li>
-		<li>開始時間検索欄に「>=2019」 → 開始時間が2019年以降の配信を表示</li>
+		<li>開始時間検索欄に「>=2019」 → 開始時間が2019/01/01 00:00:00以降の配信を表示</li>
 		</ul></p>
       </div>
     </div>
