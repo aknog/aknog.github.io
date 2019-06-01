@@ -269,7 +269,7 @@ button.icontip:hover {
 	</button>
 	</div>
 	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ<i class="fab fa-twitter"></i><a class="twitter" href="https://twitter.com/srdxsa">@srdxsa</a></div>
-	<div class="updated">6/2 0:29 更新</div>
+	<div class="updated">6/2 2:59 更新</div>
 	</div>
 	</div>
 	</th>
@@ -316,6 +316,12 @@ $.tablesorter.filter.types.tag = function( config, data ) {
 	return null;
 };
 $(function() {
+	$('.copy').attr('data-sorthash', window.location.hash);
+	var baseUrl = window.location.href.split('#')[0];
+	if (window.location.href.match(/#/) && window.history && history.replaceState) {
+		history.replaceState('srdata', document.title, baseUrl);
+	}
+
 	$('.room_img:not(.tooltipstered)').tooltipster({
 		contentAsHTML: true,
 		theme: 'tooltipster-borderless',
@@ -483,12 +489,20 @@ $(function() {
 		}
 
 		var showcolumn = [];
-		$('.columnSelector input').each(function(index, element){
+		$('.columnSelector input').each(function(index, element) {
 			if ($(element).hasClass('checked')) {
 				showcolumn.push($(element).data('column'));
 			}
 		});
-
+		var orghash = $('.copy').attr('data-showcolumn');
+		if (orghash == undefined) {
+			$('.copy').attr('data-sorthash', '#&column='+showcolumn.join('-'));
+		} else {
+			$('.copy').attr('data-sorthash', orghash+'&column='+showcolumn.join('-'));
+		}
+		//console.log($('.copy').attr('data-sorthash'));
+		//var match = $('.copy').attr('data-showcolumn').match(/column=[\d-]+/);
+		//console.log(match);
 		//$('.copy').attr('data-showcolumn', showcolumn.join('-'));
 	});
 
