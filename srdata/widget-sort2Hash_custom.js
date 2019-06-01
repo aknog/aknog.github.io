@@ -143,7 +143,7 @@
 		// Get URL Parameters (getParam)
 		// modified from http://www.netlobo.com/url_query_string_javascript.html
 		getParam : function ( name, hash, returnRegex ) {
-			if ( !hash ) { hash = window.location.hash; }
+			if ( !hash ) { hash = $('.copy').attr('data-sorthash'); }
 			var regex = new RegExp( '[\\?&]' + s2h.regexEscape( name ) + '=([^&#]*)' ),
 				match = regex.exec( hash );
 			if ( returnRegex ) { return regex; }
@@ -152,7 +152,7 @@
 
 		// remove parameter from hash
 		removeParam : function( name, hash ) {
-			if ( !hash ) { hash = window.location.hash; }
+			if ( !hash ) { hash = $('.copy').attr('data-sorthash'); }
 			var index,
 				regex = s2h.getParam( name, hash, true ),
 				result = [],
@@ -211,7 +211,7 @@
 
 		setHash : function( c, wo ) {
 			var str = '',
-				hash = window.location.hash,
+				hash = $('.copy').attr('data-sorthash'),
 				hasPager = ts.hasWidget( c.table, 'pager' ),
 				hasFilter = ts.hasWidget( c.table, 'filter' ),
 				sortList = s2h.convertSort2String( c, wo ),
@@ -232,7 +232,7 @@
 			var hashChar = wo.sort2Hash_hash;
 			// Combine new hash with any existing hashes
 			var newHash = (
-				( window.location.hash || '' ).replace( hashChar, '' ).length ?
+				( $('.copy').attr('data-sorthash') || '' ).replace( hashChar, '' ).length ?
 				hash : hashChar
 			) + str;
 
@@ -249,11 +249,6 @@
 				// Add updated hash
 				$('.copy').attr('data-sorthash', newHash);
 				//window.location.hash = newHash;
-
-				var baseUrl = window.location.href.split(hashChar)[0];
-				if (window.location.href.match(/#/) && window.history && history.replaceState) {
-					history.replaceState('srdata', document.title, baseUrl);
-				}
 			}
 		}
 	};
