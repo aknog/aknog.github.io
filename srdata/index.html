@@ -244,16 +244,21 @@ button.icontip:hover {
 }
 
 .columnSelector label {
+	margin: 5px;
   display: block;
+}
+.selectortitle {
+	margin: 0 5px;
 }
 </style>
 </head><body>
 <!--input type="text" id="url" name="url" size="400"-->
-<!--div class="columnSelectorWrapper" style="display: noneaaaa">
+<div class="columnSelectorWrapper" style="display: none">
+	<div class="selectortitle">表示する列</div>
 	<div id="columnSelector" class="columnSelector">
 
 	</div>
-</div--><div class="table-responsive-md">
+</div><div class="table-responsive-md">
 	<table id="main" class="table table-hover table-sm table-striped"><thead class="thead-dark"><tr>
 	<th colspan="7" data-sorter="false">
 	<div id="header" class="d-flex justify-content-between align-items-center">
@@ -261,15 +266,15 @@ button.icontip:hover {
 	<button type="button" class="info icontip align-middle" data-toggle="modal" data-target="#exampleModal" title="このリストについて">
 	<i class="fas fa-info-circle"></i>
 	</button>
-	<!--button type="button" class="cselect icontip align-middle" title="表示するカラム">
+	<button type="button" class="cselect icontip align-middle" title="表示するカラム">
 	<i class="fas fa-table"></i>
-	</button-->
+	</button>
 	<button type="button" class="copy icontip align-middle" data-sorthash="" title="今の状態のリストのURLをコピー">
 	<i class="fas fa-link"></i>
 	</button>
 	</div>
 	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ<i class="fab fa-twitter"></i><a class="twitter" href="https://twitter.com/srdxsa">@srdxsa</a></div>
-	<div class="updated">6/2 3:00 更新</div>
+	<div class="updated">6/2 4:08 更新</div>
 	</div>
 	</div>
 	</th>
@@ -481,6 +486,21 @@ $(function() {
 		//console.log('filterend');
 	});
 
+	var orghash = $('.copy').attr('data-sorthash');
+	var matches = orghash.match(/column=([\d\-]+)/);
+	if (matches) {
+		if (matches[1] == '0') {
+			$('#main').trigger('refreshColumnSelector', [ [] ]);
+		} else {
+			$('#main').trigger('refreshColumnSelector', [ matches[1].split('-') ]);
+		}
+		if (!$('th[data-column="5"]').is(':visible') && !$('th[data-column="6"]').is(':visible')) {
+			$('td[colspan="2"]').hide();
+		} else {
+			$('td[colspan="2"]').show();
+		}
+	}
+
 	$('#main').on('columnUpdate', function(event) {
 		if (!$('th[data-column="5"]').is(':visible') && !$('th[data-column="6"]').is(':visible')) {
 			$('td[colspan="2"]').hide();
@@ -494,16 +514,17 @@ $(function() {
 				showcolumn.push($(element).data('column'));
 			}
 		});
-		var orghash = $('.copy').attr('data-showcolumn');
-		if (orghash == undefined) {
+		if (showcolumn.length == 0) showcolumn = [0];
+		var orghash = $('.copy').attr('data-sorthash');
+		var matches = orghash.match(/column=([\d\-]+)/);
+		if (orghash == '') { // 空
 			$('.copy').attr('data-sorthash', '#&column='+showcolumn.join('-'));
-		} else {
+		} else if (matches) { // columnある
+			var newh = orghash.replace(matches[0], 'column='+showcolumn.join('-'));
+			$('.copy').attr('data-sorthash', newh);
+		} else { // columnない
 			$('.copy').attr('data-sorthash', orghash+'&column='+showcolumn.join('-'));
 		}
-		//console.log($('.copy').attr('data-sorthash'));
-		//var match = $('.copy').attr('data-showcolumn').match(/column=[\d-]+/);
-		//console.log(match);
-		//$('.copy').attr('data-showcolumn', showcolumn.join('-'));
 	});
 
 	$('.info').tooltipster({
@@ -536,7 +557,7 @@ $(function() {
 		animation: 'fade',
 		arrow: true,
 		side: ['bottom'],
-		trigger: 'hover',
+		trigger: 'click',
 		content: $('.columnSelectorWrapper'),
 		contentCloning: false,
 		interactive: true,
@@ -549,6 +570,7 @@ $(function() {
     text: function(trigger) {
 			nh = trigger.getAttribute('data-sorthash');
 			nh = nh.replace('&sort-main=1-1', '');
+			nh = nh.replace('&column=1-2-3-4-5-6', '');
 			nh = nh.replace(/^#$/, '');
 			baseUrl = window.location.href.split('#')[0];
 			ret = baseUrl + nh;
