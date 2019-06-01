@@ -247,17 +247,11 @@
 				window.location.replace(baseUrl + newHash);
 			} else {
 				// Add updated hash
-				newHash = newHash.replace('&sort-main=1-1', '');
-				var baseUrl = window.location.href.split(hashChar)[0];
-				var newUrl = baseUrl + newHash;
-				newUrl = newUrl.replace(/#$/, '');
-				$('.copy').attr('data-clipboard-text', newUrl);
-				//$('#url').val(newUrl);
-				//console.log(newUrl);
+				$('.copy').attr('data-sorthash', newHash);
 				//window.location.hash = newHash;
 
+				var baseUrl = window.location.href.split(hashChar)[0];
 				if (window.location.href.match(/#/) && window.history && history.replaceState) {
-					//console.log('replace');
 					history.replaceState('srdata', document.title, baseUrl);
 				}
 			}
