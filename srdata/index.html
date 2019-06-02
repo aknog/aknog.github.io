@@ -295,7 +295,7 @@ button.icontip:hover {
 	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ
 	<span class="tw"><a target="_blank" href="https://twitter.com/srdxsa"><i class="fab fa-twitter"></i><span class="twitter align-text-bottom">@srdxsa</span></a>
 	</div>
-	<div class="updated">6/3 0:03 更新</div>
+	<div class="updated">6/3 1:30 更新</div>
 	</div>
 	</div>
 	</th>
@@ -423,14 +423,19 @@ $(function() {
 			return false;
 		},
 		format: function(s, table, cell, cellIndex) {
-			matches = s.match(/(\d+)分(\d+)秒/);
-			if (matches == null) return s;
-			if (matches[2].length == 1) {
-				sec = '0'+matches[2];
+			matchesms = s.match(/^(\d+)分(\d+)秒$/);
+			matchesm = s.match(/^(\d+)分$/);
+			matchess = s.match(/^(\d+)秒$/);
+			if (matchesms) {
+				ret = parseInt(60 * matchesms[1]) + parseInt(matchesms[2]);
+			} else if (matchesm) {
+				ret = parseInt(60 * matchesm[1]);
+			} else if (matchess) {
+				ret = parseInt(matchess[1]);
 			} else {
-				sec = matches[2];
+				ret = s;
 			}
-			ret = matches[1]+'.'+sec;
+			//console.log(ret);
 			return ret;
 		},
 		parsed: true,
@@ -665,7 +670,7 @@ $('a.info').on('click', function(event) {
 		<li>視聴者数検索欄に「20000 to 30000」 → 視聴者数が20000以上30000以下の配信を表示</li>
 		<li>タワー数検索欄に「"10"」 → タワー数が10本の配信を表示</li>
 		<li>開始時間検索欄に「>=2019」 → 開始時間が2019/01/01 00:00:00以降の配信を表示</li>
-		<li>配信時間検索欄に「>=130.25」 → 配信時間が130分25秒以上の配信を表示</li>
+		<li>配信時間検索欄に「9分5秒 to 15分|>142分30秒」 → 配信時間が9分5秒以上15分以下または、142分30秒より長い配信を表示</li>
 		</ul></p>
 		<p><i class="fas fa-table"></i> をクリックすると表示する列を選択することができます。</p>
 		<p><i class="fas fa-link"></i> をクリックすると現在の並び順、検索欄、列表示を再現するURLをコピーします。</p>
