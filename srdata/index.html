@@ -232,15 +232,31 @@ button.icontip:hover {
 #main {
 	//width: 100%;
 }
+
+.tw {
+  background-color: #1b95e0;
+	border-radius: 2px;
+	padding: 0 8px;
+	text-decoration: none;
+}
+.tw:hover {
+	background-color: #0c7abf;
+}
 .twitter {
-	color: #00aced;
-	/*text-decoration: underline;*/
+	font-size: 12px;
+	vertical-align: middle;
+}
+.twitter:hover {
+	text-decoration: none;
 }
 .fa-twitter {
-	margin: 0 5px;
+	margin-right: 3px;
+	font-size: 14px;
+	font-weight: normal;
 }
 .fa-twitter, .twitter {
-	font-size: 14px;
+	color: white;
+	vertical-align: middle;
 }
 
 .columnSelector label {
@@ -273,8 +289,10 @@ button.icontip:hover {
 	<i class="fas fa-link"></i>
 	</button>
 	</div>
-	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ<i class="fab fa-twitter"></i><a class="twitter" href="https://twitter.com/srdxsa">@srdxsa</a></div>
-	<div class="updated">6/2 4:08 更新</div>
+	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ
+	<span class="tw"><a href="https://twitter.com/srdxsa"><i class="fab fa-twitter"></i><span class="twitter">@srdxsa</span></a>
+	</div>
+	<div class="updated">6/2 15:09 更新</div>
 	</div>
 	</div>
 	</th>
@@ -617,6 +635,8 @@ $('a.info').on('click', function(event) {
 		<li>タワー数検索欄に「"10"」 → タワー数が10本の配信を表示</li>
 		<li>開始時間検索欄に「>=2019」 → 開始時間が2019/01/01 00:00:00以降の配信を表示</li>
 		</ul></p>
+		<p><i class="fas fa-table"></i> をクリックすると表示する列を選択することができます。</p>
+		<p><i class="fas fa-link"></i> をクリックすると現在の並び順、検索欄、列を表示するURLをコピーします。</p>
       </div>
     </div>
   </div>
