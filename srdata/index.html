@@ -314,7 +314,7 @@ td .btn {
 	<button type="button" class="info icontip align-middle" data-toggle="modal" data-target="#exampleModal" title="このリストについて">
 	<i class="fas fa-info-circle"></i>
 	</button>
-	<button type="button" class="exrowall icontip align-middle" title="配信メンバーを表示/隠す">
+	<button type="button" class="exrowall icontip align-middle" title="出演メンバーを表示/隠す">
 	<i class="fas fa-user-friends"></i>
 	</button>
 	<button type="button" class="cselect icontip align-middle" title="表示するカラム">
@@ -327,7 +327,7 @@ td .btn {
 	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ
 	<button class="tw"><a target="_blank" href="https://twitter.com/srdxsa"><i class="fab fa-twitter"></i><span class="twitter align-text-bottom">@srdxsa</span></a>
 	</div>
-	<div class="updated">6/7 16:32 更新</div>
+	<div class="updated">6/7 16:38 更新</div>
 	</div>
 	</div>
 	</th>
@@ -1315,9 +1315,9 @@ $(function() {
 			var origin = $(helper.origin);
 			var data = '';
 			if (origin.hasClass('expanded')) {
-				data = '配信メンバーを隠す';
+				data = '出演メンバーを隠す';
 			} else {
-				data = '配信メンバーを表示';
+				data = '出演メンバーを表示';
 			}
 			instance.content(data);
 		},
@@ -1443,7 +1443,7 @@ $('a.info').on('click', function(event) {
 		<li>開始時間検索欄に「>=2019」 → 開始時間が2019/01/01 00:00:00以降の配信を表示<a class="btn btn-outline-info btn-sm" role="button" href="#&filter-main=-%3E%3D2019-----">テスト</a></li>
 		<li>配信時間検索欄に「9分5秒 to 15分|>142分30秒」 → 配信時間が9分5秒以上15分以下または、142分30秒より長い配信を表示<a class="btn btn-outline-info btn-sm" role="button" href="#&filter-main=---9%E5%88%865%E7%A7%92%20to%2015%E5%88%86%7C%3E142%E5%88%8630%E7%A7%92---">テスト</a></li>
 		</ul></p>
-		<p><i class="fas fa-user-friends"></i> をクリックするとすべての配信者を表示/隠すことができます。各行の <i class="fas fa-caret-left"></i> をクリックするとその行の配信者を表示/隠すことができます。個人ルームで配信者が本人のみの場合は <i class="fas fa-caret-left" style="color: #CCCCCC;"></i> のようにグレー表示になります。配信者名をクリックして絞り込むことができます。配信者の情報は手動更新なので、入力に遅れや間違いがある可能性があります。</p>
+		<p><i class="fas fa-user-friends"></i> をクリックするとすべての出演メンバーを表示/隠すことができます。各行の <i class="fas fa-caret-left"></i> をクリックするとその行の出演メンバーを表示/隠すことができます。個人ルームで出演メンバーが本人のみの場合は <i class="fas fa-caret-left" style="color: #CCCCCC;"></i> のようにグレー表示になります。メンバー名をクリックして絞り込むことができます。出演メンバーの情報は手動更新なので、入力に遅れや間違いがある可能性があります。</p>
 		<p><i class="fas fa-table"></i> をクリックすると表示する列を選択することができます。列を消すと、その列での絞り込みや並び替えは解除されます。</p>
 		<p><i class="fas fa-link"></i> をクリックすると現在の並び順、検索欄、列表示を再現するURLをコピーします。</p>
       </div>
