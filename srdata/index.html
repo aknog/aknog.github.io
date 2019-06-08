@@ -302,6 +302,11 @@ th .btn {
 .srow .fas.disabled {
 	color: #CCCCCC;
 }
+
+.dropdown-menu {
+	width: 620px;
+	white-space: normal;
+}
 </style>
 </head><body>
 <!--input type="text" id="url" name="url" size="400"-->
@@ -337,7 +342,7 @@ th .btn {
 	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ
 	<button class="tw"><a target="_blank" href="https://twitter.com/srdxsa"><i class="fab fa-twitter"></i><span class="twitter align-text-bottom">@srdxsa</span></a>
 	</div>
-	<div class="updated">6/9 1:25 更新</div>
+	<div class="updated">6/9 3:13 更新</div>
 	</div>
 	</div>
 	</th>
@@ -1111,11 +1116,11 @@ $(function() {
 	//console.log(sortable);
 	for(var i = 0; i < sortable.length; i++){
 		if (i % 5 == 0) {
-			$('.dropdown-menu').append('<div>');
+			//$('.dropdown-menu').append('<div>');
 		}
-		$('.dropdown-menu').append('<button type="button" class="btn btn-outline-secondary btn-sm tag" data-tag="'+sortable[i][0]+'">'+sortable[i][0]+' <span class="badge badge-light">'+sortable[i][1]+'</span></button>');
+		$('.dropdown-menu').append('<button type="button" class="btn btn-outline-dark btn-sm tag" data-tag="'+sortable[i][0]+'">'+sortable[i][0]+' <span class="badge badge-pill badge-light">'+sortable[i][1]+'</span></button>');
 		if (i % 5 == 4) {
-			$('.dropdown-menu').append('</div>');
+			//$('.dropdown-menu').append('</div>');
 		}
 	}
 	$('th .tag').on('click', function (event) {
