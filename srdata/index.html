@@ -31,6 +31,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/widgets/widget-cssStickyHeaders.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/widgets/widget-columnSelector.min.js"></script>
 <script src="./widget-sort2Hash_custom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/widgets/widget-output.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.bootstrap_4.min.css" />
 <style>
@@ -356,6 +357,9 @@ th .btn {
 	<button type="button" class="cselect icontip align-middle" title="表示するカラム">
 	<i class="fas fa-table"></i>
 	</button>
+	<button type="button" class="compare icontip align-middle" title="比較グラフを表示">
+	<i class="fas fa-chart-bar"></i>
+	</button>
 	<button type="button" class="copy icontip align-middle" data-sorthash="" title="今の状態のリストのURLをコピー">
 	<i class="fas fa-link"></i>
 	</button>
@@ -363,7 +367,7 @@ th .btn {
 	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ
 	<button class="tw"><a target="_blank" href="https://twitter.com/srdxsa"><i class="fab fa-twitter"></i><span class="twitter align-text-bottom">@srdxsa</span></a></button>
 	</div>
-	<div class="updated">6/13 22:39 更新</div>
+	<div class="updated">6/14 19:02 更新</div>
 	</div>
 	</div>
 	</th>
@@ -371,7 +375,8 @@ th .btn {
 	<tr>
 	<th scope="row" class="">
 	ルーム<span class="rowcount"></span>
-	</th><th scope="row" class="sorter-isoDate" data-sortInitialOrder="desc">開始時間</th><th scope="row" class="sorter-isoDate" data-sortInitialOrder="desc">終了時間</th><th scope="row" data-sortInitialOrder="desc" class="sorter-myduration">配信時間</th><th scope="row" class="" data-sortInitialOrder="desc">視聴者数</th><th scope="row" class="" data-sortInitialOrder="desc">タワー</th><th scope="row" class="" data-sortInitialOrder="desc">ギフト額</th></tr></thead><tbody><tr data-key='46_ikutaerika,122616,7003366,1560422862'><td class='' data-roomid='122616' data-roomnameid='46_ikutaerika' data-key='46_ikutaerika,122616,7003366,1560422862' data-text='生田 絵梨花（乃木坂46） tag:乃木坂46: tag:のぎおび: tag:生田絵梨花: 46_ikutaerika'><div class='d-flex justify-content-between frow'><div></div><div><span class="small tag triangle nmark" data-tag="乃木坂46">◢</span><span class="roomname">生田 絵梨花（乃木坂46）</span><button type="button" class="btn btn-secondary btn-sm tag" data-tag="のぎおび">のぎおび</button></div><div><a href='chart.html?key=46_ikutaerika,122616,7003366,1560422862'><i class="fas fa-chart-line"></i></a><span class='exrow mem0'><i class="fas fa-caret-left"></i></span></div></div><div class='d-none justify-content-between srow'><div class="member"><!--<i class="fas fa-user-friends"></i>--></i><button type="button" class="btn btn-secondary btn-sm tag" data-tag="生田絵梨花">生田絵梨花</button></div><div class=''><a href='https://www.showroom-live.com/46_ikutaerika'><i class="fas fa-video fa-xs"></i></a><a href='https://www.showroom-live.com/room/profile?room_id=122616'><i class="fas fa-user fa-xs"></i></a></div>
+	</th><th scope="row" class="sorter-isoDate" data-sortInitialOrder="desc">開始時間</th><th scope="row" class="sorter-isoDate" data-sortInitialOrder="desc">終了時間</th><th scope="row" data-sortInitialOrder="desc" class="sorter-myduration">配信時間</th><th scope="row" class="" data-sortInitialOrder="desc">視聴者数</th><th scope="row" class="" data-sortInitialOrder="desc">タワー</th><th scope="row" class="" data-sortInitialOrder="desc">ギフト額</th></tr></thead><tbody><tr data-key='46_horimiona,122643,7010520,1560504611'><td class='' data-roomid='122643' data-roomnameid='46_horimiona' data-key='46_horimiona,122643,7010520,1560504611' data-text='堀 未央奈（乃木坂46） tag:乃木坂46: tag:のぎおび: tag:堀未央奈: 46_horimiona'><div class='d-flex justify-content-between frow'><div></div><div><span class="small tag triangle nmark" data-tag="乃木坂46">◢</span><span class="roomname">堀 未央奈（乃木坂46）</span><button type="button" class="btn btn-secondary btn-sm tag" data-tag="のぎおび">のぎおび</button></div><div><a href='chart.html?key=46_horimiona,122643,7010520,1560504611'><i class="fas fa-chart-line"></i></a><span class='exrow mem0'><i class="fas fa-caret-left"></i></span></div></div><div class='d-none justify-content-between srow'><div class="member"><!--<i class="fas fa-user-friends"></i>--></i><button type="button" class="btn btn-secondary btn-sm tag" data-tag="堀未央奈">堀未央奈</button></div><div class=''><a href='https://www.showroom-live.com/46_horimiona'><i class="fas fa-video fa-xs"></i></a><a href='https://www.showroom-live.com/room/profile?room_id=122643'><i class="fas fa-user fa-xs"></i></a></div>
+				</div></td><td class='text-center'>2019/06/14 18:30:11</td><td class='text-center' data-text='2019/06/14 19:01:02'>19:01:02</td><td class='text-center'>30分51秒</td><td class='text-center' data-text='29301'>29,301人</td><td class='text-center' data-text='0'>0本</td><td class='text-center' data-text='11200'>11,200</td></tr><tr data-key='46_ikutaerika,122616,7003366,1560422862'><td class='' data-roomid='122616' data-roomnameid='46_ikutaerika' data-key='46_ikutaerika,122616,7003366,1560422862' data-text='生田 絵梨花（乃木坂46） tag:乃木坂46: tag:のぎおび: tag:生田絵梨花: 46_ikutaerika'><div class='d-flex justify-content-between frow'><div></div><div><span class="small tag triangle nmark" data-tag="乃木坂46">◢</span><span class="roomname">生田 絵梨花（乃木坂46）</span><button type="button" class="btn btn-secondary btn-sm tag" data-tag="のぎおび">のぎおび</button></div><div><a href='chart.html?key=46_ikutaerika,122616,7003366,1560422862'><i class="fas fa-chart-line"></i></a><span class='exrow mem0'><i class="fas fa-caret-left"></i></span></div></div><div class='d-none justify-content-between srow'><div class="member"><!--<i class="fas fa-user-friends"></i>--></i><button type="button" class="btn btn-secondary btn-sm tag" data-tag="生田絵梨花">生田絵梨花</button></div><div class=''><a href='https://www.showroom-live.com/46_ikutaerika'><i class="fas fa-video fa-xs"></i></a><a href='https://www.showroom-live.com/room/profile?room_id=122616'><i class="fas fa-user fa-xs"></i></a></div>
 				</div></td><td class='text-center'>2019/06/13 19:47:42</td><td class='text-center' data-text='2019/06/13 20:17:54'>20:17:54</td><td class='text-center'>30分12秒</td><td class='text-center' data-text='43294'>43,294人</td><td class='text-center' data-text='4'>4本</td><td class='text-center' data-text='62150'>62,150</td></tr><tr data-key='nogizaka46ann,242067,6999180,1560354900'><td class='' data-roomid='242067' data-roomnameid='nogizaka46ann' data-key='nogizaka46ann,242067,6999180,1560354900' data-text='乃木坂46のオールナイトニッポン tag:乃木坂46: tag:オールナイトニッポン: tag:新内眞衣: tag:桜井玲香: tag:佐藤楓: nogizaka46ann'><div class='d-flex justify-content-between frow'><div></div><div><span class="small tag triangle nmark" data-tag="乃木坂46">◢</span><span class="roomname">乃木坂46のオールナイトニッポン</span></div><div><a href='chart.html?key=nogizaka46ann,242067,6999180,1560354900'><i class="fas fa-chart-line"></i></a><span class='exrow mem3'><i class="fas fa-caret-left"></i></span></div></div><div class='d-none justify-content-between srow'><div class="member"><!--<i class="fas fa-user-friends"></i>--></i><button type="button" class="btn btn-secondary btn-sm tag" data-tag="オールナイトニッポン">オールナイトニッポン</button><button type="button" class="btn btn-secondary btn-sm tag" data-tag="新内眞衣">新内眞衣</button><button type="button" class="btn btn-secondary btn-sm tag" data-tag="桜井玲香">桜井玲香</button><button type="button" class="btn btn-secondary btn-sm tag" data-tag="佐藤楓">佐藤楓</button></div><div class=''><a href='https://www.showroom-live.com/nogizaka46ann'><i class="fas fa-video fa-xs"></i></a><a href='https://www.showroom-live.com/room/profile?room_id=242067'><i class="fas fa-user fa-xs"></i></a></div>
 				</div></td><td class='text-center'>2019/06/13 00:55:00</td><td class='text-center' data-text='2019/06/13 03:10:04'>03:10:04</td><td class='text-center'>135分4秒</td><td class='text-center' data-text='32233'>32,233人</td><td class='text-center' colspan='2' data-text=''><button type='button' class='btn btn-secondary btn-sm'>ギフティング不可</button></td></tr><tr data-key='pre_nogizaka46ann,245219,6998979,1560353405'><td class='' data-roomid='245219' data-roomnameid='pre_nogizaka46ann' data-key='pre_nogizaka46ann,245219,6998979,1560353405' data-text='乃木坂46のオールナイトニッポン 超直前スペシャル！ tag:乃木坂46: tag:オールナイトニッポン: tag:新内眞衣: pre_nogizaka46ann'><div class='d-flex justify-content-between frow'><div></div><div><span class="small tag triangle nmark" data-tag="乃木坂46">◢</span><span class="roomname">乃木坂46のオールナイトニッポン 超直前スペシャル！</span></div><div><a href='chart.html?key=pre_nogizaka46ann,245219,6998979,1560353405'><i class="fas fa-chart-line"></i></a><span class='exrow mem1'><i class="fas fa-caret-left"></i></span></div></div><div class='d-none justify-content-between srow'><div class="member"><!--<i class="fas fa-user-friends"></i>--></i><button type="button" class="btn btn-secondary btn-sm tag" data-tag="オールナイトニッポン">オールナイトニッポン</button><button type="button" class="btn btn-secondary btn-sm tag" data-tag="新内眞衣">新内眞衣</button></div><div class=''><a href='https://www.showroom-live.com/pre_nogizaka46ann'><i class="fas fa-video fa-xs"></i></a><a href='https://www.showroom-live.com/room/profile?room_id=245219'><i class="fas fa-user fa-xs"></i></a></div>
 				</div></td><td class='text-center'>2019/06/13 00:30:05</td><td class='text-center' data-text='2019/06/13 00:53:26'>00:53:26</td><td class='text-center'>23分21秒</td><td class='text-center' data-text='8217'>8,217人</td><td class='text-center' data-text='0'>0本</td><td class='text-center' data-text='400'>400</td></tr><tr data-key='46_SUZUKA_TOMITA,134055,6996311,1560340831'><td class='' data-roomid='134055' data-roomnameid='46_SUZUKA_TOMITA' data-key='46_SUZUKA_TOMITA,134055,6996311,1560340831' data-text='富田 鈴花（日向坂46） tag:日向坂46: tag:富田鈴花: 46_SUZUKA_TOMITA'><div class='d-flex justify-content-between frow'><div></div><div><span class="small tag triangle hmark" data-tag="日向坂46">◢</span><span class="roomname">富田 鈴花（日向坂46）</span></div><div><a href='chart.html?key=46_SUZUKA_TOMITA,134055,6996311,1560340831'><i class="fas fa-chart-line"></i></a><span class='exrow mem0'><i class="fas fa-caret-left"></i></span></div></div><div class='d-none justify-content-between srow'><div class="member"><!--<i class="fas fa-user-friends"></i>--></i><button type="button" class="btn btn-secondary btn-sm tag" data-tag="富田鈴花">富田鈴花</button></div><div class=''><a href='https://www.showroom-live.com/46_SUZUKA_TOMITA'><i class="fas fa-video fa-xs"></i></a><a href='https://www.showroom-live.com/room/profile?room_id=134055'><i class="fas fa-user fa-xs"></i></a></div>
@@ -870,7 +875,7 @@ $(function() {
 		widthFixed: true,
 		durationLength: 4,
 		durationLabels: '(?:years|year|y|年),(?:days|day|d|日),(?:hours|hour|h|時間),(?:minutes|minute|min|m|分),(?:seconds|second|sec|s|秒)',
-		widgets: ["sort2Hash", "filter", "columns", "zebra", "stickyHeaders", "columnSelector"],
+		widgets: ["sort2Hash", "filter", "columns", "zebra", "stickyHeaders", "columnSelector", "output"],
 		widgetOptions: {
 			//columns: ["primary", "secondary", "tertiary"],
 			columns: ["primary"],
@@ -895,54 +900,77 @@ $(function() {
 			//stickyHeaders_yScroll: $(window),
 
 			// target the column selector markup
-      columnSelector_container : $('#columnSelector'),
-      // column status, true = display, false = hide
-      // disable = do not display on list
-      columnSelector_columns : {
-        0: 'disable' /* set to disabled; not allowed to unselect it */
-      },
-      // remember selected columns (requires $.tablesorter.storage)
-      columnSelector_saveColumns: false,
+			columnSelector_container : $('#columnSelector'),
+			// column status, true = display, false = hide
+			// disable = do not display on list
+			columnSelector_columns : {
+			0: 'disable' /* set to disabled; not allowed to unselect it */
+			},
+			// remember selected columns (requires $.tablesorter.storage)
+			columnSelector_saveColumns: false,
 
-      // container layout
-      columnSelector_layout : '<label><input type="checkbox">{name}</label>',
-      // layout customizer callback called for each column
-      // function($cell, name, column) { return name || $cell.html(); }
-      columnSelector_layoutCustomizer : null,
-      // data attribute containing column name to use in the selector container
-      columnSelector_name  : 'data-selector-name',
+			// container layout
+			columnSelector_layout : '<label><input type="checkbox">{name}</label>',
+			// layout customizer callback called for each column
+			// function($cell, name, column) { return name || $cell.html(); }
+			columnSelector_layoutCustomizer : null,
+			// data attribute containing column name to use in the selector container
+			columnSelector_name  : 'data-selector-name',
 
-      /* Responsive Media Query settings */
-      // enable/disable mediaquery breakpoints
-      columnSelector_mediaquery: false,
-      // toggle checkbox name
-      columnSelector_mediaqueryName: 'Auto: ',
-      // breakpoints checkbox initial setting
-      columnSelector_mediaqueryState: true,
-      // hide columnSelector false columns while in auto mode
-      columnSelector_mediaqueryHidden: true,
+			/* Responsive Media Query settings */
+			// enable/disable mediaquery breakpoints
+			columnSelector_mediaquery: false,
+			// toggle checkbox name
+			columnSelector_mediaqueryName: 'Auto: ',
+			// breakpoints checkbox initial setting
+			columnSelector_mediaqueryState: true,
+			// hide columnSelector false columns while in auto mode
+			columnSelector_mediaqueryHidden: true,
 
-      // set the maximum and/or minimum number of visible columns; use null to disable
-      columnSelector_maxVisible: null,
-      columnSelector_minVisible: null,
-      // responsive table hides columns with priority 1-6 at these breakpoints
-      // see http://view.jquerymobile.com/1.3.2/dist/demos/widgets/table-column-toggle/#Applyingapresetbreakpoint
-      // *** set to false to disable ***
-      columnSelector_breakpoints : [ '20em', '30em', '40em', '50em', '60em', '70em' ],
-      // data attribute containing column priority
-      // duplicates how jQuery mobile uses priorities:
-      // http://view.jquerymobile.com/1.3.2/dist/demos/widgets/table-column-toggle/
-      columnSelector_priority : 'data-priority',
+			// set the maximum and/or minimum number of visible columns; use null to disable
+			columnSelector_maxVisible: null,
+			columnSelector_minVisible: null,
+			// responsive table hides columns with priority 1-6 at these breakpoints
+			// see http://view.jquerymobile.com/1.3.2/dist/demos/widgets/table-column-toggle/#Applyingapresetbreakpoint
+			// *** set to false to disable ***
+			columnSelector_breakpoints : [ '20em', '30em', '40em', '50em', '60em', '70em' ],
+			// data attribute containing column priority
+			// duplicates how jQuery mobile uses priorities:
+			// http://view.jquerymobile.com/1.3.2/dist/demos/widgets/table-column-toggle/
+			columnSelector_priority : 'data-priority',
 
-      // class name added to checked checkboxes - this fixes an issue with Chrome not updating FontAwesome
-      // applied icons; use this class name (input.checked) instead of input:checked
-      columnSelector_cssChecked : 'checked',
+			// class name added to checked checkboxes - this fixes an issue with Chrome not updating FontAwesome
+			// applied icons; use this class name (input.checked) instead of input:checked
+			columnSelector_cssChecked : 'checked',
 
-      // class name added to rows that have a span (e.g. grouping widget & other rows inside the tbody)
-      columnSelector_classHasSpan : 'hasSpan',
+			// class name added to rows that have a span (e.g. grouping widget & other rows inside the tbody)
+			columnSelector_classHasSpan : 'hasSpan',
 
-      // event triggered when columnSelector completes
-      columnSelector_updated : 'columnUpdate'
+			// event triggered when columnSelector completes
+			columnSelector_updated : 'columnUpdate',
+
+			output_separator: 'json',
+			output_dataAttrib: 'data-text',
+			output_includeHeader: false,
+			output_formatContent : function(c, wo, data) {
+				if (data.isHeader) {
+					return data.content.replace(/ \(\d+\/\d+\)/ig, '');
+				}
+				return data.content;
+			},
+			output_callback: function(c, data) {
+				var html = '<form id="temp_form" method="post" target="_blank" action="https://aknog.sakura.ne.jp/srdata_compare.php">';
+				//var html = '<form id="temp_form" style="display: none;" method="post" target="_blank" action="./srdata_compare.php">';
+				html += "<input type='hidden' name='data' value='" + data + "' >";
+				html += '</form>';
+				$("body").append(html);
+				//$('#temp_form').action = 'https://aknog.sakura.ne.jp/srdata_compare.php';
+				//$('#temp_form').method = 'POST';
+				//$('#temp_form').target = '_target';
+				$('#temp_form').submit();
+				$('#temp_form').remove();
+				return false;
+			},
 		},
 	}).bind('filterEnd', function(event, data) {
 		if (data.filteredRows == data.totalRows) {
@@ -1031,6 +1059,13 @@ $(function() {
 		side: ['bottom'],
 		trigger: 'hover',
 	});
+	$('.compare').tooltipster({
+		theme: 'tooltipster-shadow',
+		animation: 'fade',
+		arrow: true,
+		side: ['bottom'],
+		trigger: 'hover',
+	});
 	$('.exrowall').tooltipster({
 		theme: 'tooltipster-shadow',
 		animation: 'fade',
@@ -1103,6 +1138,10 @@ $(function() {
 		window.location.reload(true); 
 	});
 
+	$('.compare').on('click', function(e) {
+		$('#main').trigger('outputTable');
+		return false;
+	});
 	$('.exrow').on('click', function(e) {
 		var srow = $(this).parents('td').find('.srow');
 		if($(this).hasClass('expanded')) {
