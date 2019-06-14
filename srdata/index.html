@@ -357,7 +357,7 @@ th .btn {
 	<button type="button" class="cselect icontip align-middle" title="表示するカラム">
 	<i class="fas fa-table"></i>
 	</button>
-	<button type="button" class="compare icontip align-middle" title="比較グラフを表示">
+	<button type="button" class="compare icontip align-middle" title="表示中の行の比較グラフを表示">
 	<i class="fas fa-chart-bar"></i>
 	</button>
 	<button type="button" class="copy icontip align-middle" data-sorthash="" title="今の状態のリストのURLをコピー">
@@ -367,7 +367,7 @@ th .btn {
 	<div class="title">乃木坂46・欅坂46・日向坂46 SHOWROOMデータ
 	<button class="tw"><a target="_blank" href="https://twitter.com/srdxsa"><i class="fab fa-twitter"></i><span class="twitter align-text-bottom">@srdxsa</span></a></button>
 	</div>
-	<div class="updated">6/14 19:02 更新</div>
+	<div class="updated">6/15 1:56 更新</div>
 	</div>
 	</div>
 	</th>
@@ -760,9 +760,16 @@ $.tablesorter.filter.types.tag = function( config, data ) {
 	return null;
 };
 $(function() {
-	$('.copy').attr('data-sorthash', window.location.hash);
-	var baseUrl = window.location.href.split('#')[0];
-	if (window.location.href.match(/#/) && window.history && history.replaceState) {
+	console.log(window.location.hash);
+	console.log(window.location.search);
+	if (window.location.search) {
+		$('.copy').attr('data-sorthash', window.location.search.replace('?', '#'));
+		var baseUrl = window.location.href.split('?')[0];
+	} else {
+		$('.copy').attr('data-sorthash', window.location.hash);
+		var baseUrl = window.location.href.split('#')[0];
+	}
+	if (window.location.href.match(/(#|\?)/) && window.history && history.replaceState) {
 		history.replaceState('srdata', document.title, baseUrl);
 	}
 
@@ -1122,7 +1129,8 @@ $(function() {
 			nh = nh.replace('&column=1-2-3-4-5-6', '');
 			nh = nh.replace(/^#$/, '');
 			baseUrl = window.location.href.split('#')[0];
-			ret = baseUrl + nh;
+			//ret = baseUrl + nh;
+			ret = baseUrl + nh.replace('#', '?');
 			return ret;
 		}
 	});
