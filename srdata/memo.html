@@ -2,42 +2,55 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>メモ</title>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <style>
-.link {
-    font-weight: bold;
+.container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.btn {
+    //font-weight: bold;
 }
 .btn, .card {
-    margin: 2px 0;
+    margin: 3px;
 }
 </style>
 </head><body>
 <div class="container">
 <div>
-    <button type="button" class="btn btn-primary link" data-href="../nogiobi">のぎおび周回表</button>
+    <button type="button" class="btn link" data-href="../nogiobi">のぎおび周回表</button>
 </div>
 <div>
-    <button type="button" class="btn btn-primary link" data-href="../nogiobi/aftertalk.txt">過去ののぎおびアフタートーク</button>
+    <button type="button" class="btn link" data-href="../nogiobi/aftertalk.txt">過去ののぎおびアフタートーク</button>
 </div>
-   
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">メモ</h5>
-        <p class="card-text">SHOWROOMは負荷軽減のため、人の多い部屋では一部のデータを間引いている<br>
-            間引かれるデータはコメント、無料ギフト、少額ギフト<br>
-            無料ギフトとは星と種、少額ギフトとはだるま(100未満)、花、小判、ハート(100未満)、音符、うまい、かわいいのこと<br>
-            間引かれたデータはコメントやギフトを送った本人の画面上には見えていて、SHOWROOMのサーバ側にも送られているが、他の視聴者には送られていないので見えていない<br>
-            画面上のアバターの位置(ポイント順)が上位であるほど間引かれにくく、下位であるほど間引かれやすい<br>
-            コメントは部屋のコメント総数が10秒あたり約50件(2019/05/22以降は約35件)を超えないようになっていて、これは配信者側の可読性を保つ意味もあると思われる</p>
+
+<div>
+    <button type="button" class="btn" data-toggle="collapse" data-target="#datamemo" aria-expanded="false" aria-controls="datamemo">SHOWROOMの仕様に関するメモ</button>
+</div>
+
+
+<div class="collapse" id="datamemo">
+    <div class="card card-body">
+        SHOWROOMは負荷軽減のため、人の多い部屋では一部のデータを間引いている<br>
+        間引かれるデータはコメント、無料ギフト、少額ギフト<br>
+        無料ギフトとは星と種、少額ギフトとはだるま(100未満)、花、小判、ハート(100未満)、音符、うまい、かわいいのこと<br>
+        間引かれたデータはコメントやギフトを送った本人の画面上には見えていて、SHOWROOMのサーバ側にも送られているが、他の視聴者には送られていないので見えていない<br>
+        画面上のアバターの位置(ポイント順)が上位であるほど間引かれにくく、下位であるほど間引かれやすい<br>
+        コメントは部屋のコメント総数が10秒あたり約50件(2019/05/22以降は約35件)を超えないようになっていて、これは配信者側の可読性を保つ意味もあると思われる<br>
+        <br>
+        <small>参考<br>
+            <a href="https://dev.classmethod.jp/report/denatechcon-2018-showroom/">https://dev.classmethod.jp/report/denatechcon-2018-showroom/</a><br>
+            <a href="https://www.slideshare.net/dena_tech/showroom-html5-88373778">https://www.slideshare.net/dena_tech/showroom-html5-88373778</a><br>
+        </small>
     </div>
 </div>
 </div>
 <script>
 $(function(){
+    $('.btn').addClass('btn-secondary');
     $('.link').on('click', function() {
         //window.open($(this).data('href'), '_blank');
         window.open($(this).data('href'));
