@@ -1,16 +1,46 @@
 <html><head>
-<title></title>
+<title>メモ</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+.link {
+    font-weight: bold;
+}
+.btn, .card {
+    margin: 2px 0;
+}
+</style>
 </head><body>
-<a href="../nogiobi">のぎおび周回表</a><br>
-<a href="../nogiobi/aftertalk.txt">過去ののぎおびアフタートーク</a><br>
-<br>
-<p>メモ</p>
-<p>SHOWROOMは負荷軽減のため、人の多い部屋では一部のデータを間引いている<br>
-間引かれるデータはコメント、無料ギフト、少額ギフト<br>
-無料ギフトとは星と種、少額ギフトとはだるま(100未満)、花、小判、ハート(100未満)、音符、うまい、かわいいのこと<br>
-間引かれたデータはコメントやギフトを送った本人の画面上には見えていて、SHOWROOMのサーバ側にも送られているが、他の視聴者には送られていないので見えていない<br>
-画面上のアバターの位置(ポイント順)が上位であるほど間引かれにくく、下位であるほど間引かれやすい<br>
-コメントは部屋のコメント総数が10秒あたり約50件(2019/05/22以降は約35件)を超えないようになっていて、これは配信者側の可読性を保つ意味もあると思われる</p>
-
+<div class="container">
+<div>
+    <button type="button" class="btn btn-primary link" data-href="../nogiobi">のぎおび周回表</button>
+</div>
+<div>
+    <button type="button" class="btn btn-primary link" data-href="../nogiobi/aftertalk.txt">過去ののぎおびアフタートーク</button>
+</div>
+   
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">メモ</h5>
+        <p class="card-text">SHOWROOMは負荷軽減のため、人の多い部屋では一部のデータを間引いている<br>
+            間引かれるデータはコメント、無料ギフト、少額ギフト<br>
+            無料ギフトとは星と種、少額ギフトとはだるま(100未満)、花、小判、ハート(100未満)、音符、うまい、かわいいのこと<br>
+            間引かれたデータはコメントやギフトを送った本人の画面上には見えていて、SHOWROOMのサーバ側にも送られているが、他の視聴者には送られていないので見えていない<br>
+            画面上のアバターの位置(ポイント順)が上位であるほど間引かれにくく、下位であるほど間引かれやすい<br>
+            コメントは部屋のコメント総数が10秒あたり約50件(2019/05/22以降は約35件)を超えないようになっていて、これは配信者側の可読性を保つ意味もあると思われる</p>
+    </div>
+</div>
+</div>
+<script>
+$(function(){
+    $('.link').on('click', function() {
+        //window.open($(this).data('href'), '_blank');
+        window.open($(this).data('href'));
+    });
+});
+</script>
 </body>
 </html>
