@@ -225,13 +225,19 @@ button.icontip {
 	color: white;
 	background-color: Transparent;
 	background-repeat:no-repeat;
-	border: solid 0px white;
 	cursor:pointer;
 	overflow: hidden;
 	outline:none;
 	margin: 0;
 	/*float: left;*/
 	vertical-align: middle;
+}
+button.icontip:hover {
+	background-color: #5c6166;
+}
+#navbarToggleExternalContent button.icontip {
+	border: 0;
+	border-right: 1px solid #484d53;
 	//border-radius: 5px;
 }
 button.icontip:hover {
@@ -376,7 +382,7 @@ th .btn {
 	<th colspan="7" data-sorter="false">
 
 	<div id="header" class="d-flex justify-content-between align-items-center">
-		<div>
+		<div class="">
 			<button class="navbar-toggler icontip" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
 			<i class="fas fa-bars"></i>
 			</button>
@@ -391,40 +397,40 @@ th .btn {
 	</div>
 	<div id="navbarToggleExternalContent" class="collapse show">
 		<div id="header" class="d-flex justify-content-between align-items-center">
-			<div class="">
-			<button type="button" class="info icontip align-middle" data-toggle="modal" data-target="#exampleModal" title="このリストについて">
-			<i class="fas fa-info-circle fa-fw"></i>
-			</button>
-			<div class="btn-group">
-				<button type="button" class="icontip align-middle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  title="メモ">
-				<i class="fas fa-file-alt fa-fw"></i>
+			<div class="d-flex align-items-center">
+				<button type="button" class="info icontip align-middle" data-toggle="modal" data-target="#exampleModal" title="このリストについて">
+				<i class="fas fa-info-circle fa-fw"></i>
 				</button>
-				<div class="dropdown-menu  dropdown-menu-right">
-					<a class="dropdown-item nogiobitable">のぎおび周回表</a>
-					<a class="dropdown-item nogiobiaftertalk">過去ののぎおびアフタートーク</a>
-					<a class="dropdown-item srmemo">SHOWROOMの仕様に関するメモ</a>
+				<div class="btn-group">
+					<button type="button" class="icontip align-middle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  title="メモ">
+					<i class="fas fa-file-alt fa-fw"></i>
+					</button>
+					<div class="dropdown-menu  dropdown-menu-right">
+						<a class="dropdown-item nogiobitable">のぎおび周回表</a>
+						<a class="dropdown-item nogiobiaftertalk">過去ののぎおびアフタートーク</a>
+						<a class="dropdown-item srmemo">SHOWROOMの仕様に関するメモ</a>
+					</div>
 				</div>
-			</div>
-			<button type="button" class="exrowall icontip align-middle" title="出演メンバーを表示/隠す">
-			<i class="fas fa-user-friends fa-fw"></i>
-			</button>
-			<div class="btn-group">
-				<button type="button" class="ptags icontip align-middle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="使われているタグ一覧">
-				<i class="fas fa-tags fa-fw"></i>
+				<button type="button" class="exrowall icontip align-middle" title="出演メンバーを表示/隠す">
+				<i class="fas fa-user-friends fa-fw"></i>
 				</button>
-				<div class="dropdown-menu ptagsmenu dropdown-menu-right"></div>
+				<div class="btn-group">
+					<button type="button" class="ptags icontip align-middle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="使われているタグ一覧">
+					<i class="fas fa-tags fa-fw"></i>
+					</button>
+					<div class="dropdown-menu ptagsmenu dropdown-menu-right"></div>
+				</div>
+				<button type="button" class="cselect icontip align-middle" title="表示するカラム">
+				<i class="fas fa-table fa-fw"></i>
+				</button>
+				<button type="button" class="compare icontip align-middle" title="表示中の行の比較グラフを表示">
+				<i class="fas fa-chart-bar fa-fw"></i>
+				</button>
+				<button type="button" class="copy icontip align-middle" data-sorthash="" title="今の状態のリストのURLをコピー">
+				<i class="fas fa-link fa-fw"></i>
+				</button>
 			</div>
-			<button type="button" class="cselect icontip align-middle" title="表示するカラム">
-			<i class="fas fa-table fa-fw"></i>
-			</button>
-			<button type="button" class="compare icontip align-middle" title="表示中の行の比較グラフを表示">
-			<i class="fas fa-chart-bar fa-fw"></i>
-			</button>
-			<button type="button" class="copy icontip align-middle" data-sorthash="" title="今の状態のリストのURLをコピー">
-			<i class="fas fa-link fa-fw"></i>
-			</button>
-			</div>
-			<div class="updated">7/23 18:37 更新</div>
+			<div class="updated">7/24 1:55 更新</div>
 		</div>
 	</div>
 
