@@ -309,7 +309,7 @@ td .btn {
 th .btn {
 	margin: 2px !important;
 }
-.dropdown-menu {
+.ptagsmenu {
 	padding: 3px;
 }
 
@@ -332,13 +332,13 @@ th .btn {
 	color: #CCCCCC;
 }
 
-.dropdown-menu {
+.ptagsmenu {
     width: calc(100vw - 26px);
 	white-space: normal;
 	/*background-color: transparent;
 	border: none;*/
 }
-.dropdown-menu .btn {
+.ptagsmenu .btn {
 	/*background-color: #fff;*/
 }
 .twbtnc {
@@ -393,28 +393,38 @@ th .btn {
 		<div id="header" class="d-flex justify-content-between align-items-center">
 			<div class="">
 			<button type="button" class="info icontip align-middle" data-toggle="modal" data-target="#exampleModal" title="このリストについて">
-			<i class="fas fa-info-circle"></i>
+			<i class="fas fa-info-circle fa-fw"></i>
 			</button>
+			<div class="btn-group">
+				<button type="button" class="icontip align-middle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  title="メモ">
+				<i class="fas fa-file-alt fa-fw"></i>
+				</button>
+				<div class="dropdown-menu  dropdown-menu-right">
+					<a class="dropdown-item nogiobitable">のぎおび周回表</a>
+					<a class="dropdown-item nogiobiaftertalk">過去ののぎおびアフタートーク</a>
+					<a class="dropdown-item srmemo">SHOWROOMの仕様に関するメモ</a>
+				</div>
+			</div>
 			<button type="button" class="exrowall icontip align-middle" title="出演メンバーを表示/隠す">
-			<i class="fas fa-user-friends"></i>
+			<i class="fas fa-user-friends fa-fw"></i>
 			</button>
 			<div class="btn-group">
 				<button type="button" class="ptags icontip align-middle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="使われているタグ一覧">
-				<i class="fas fa-tags"></i>
+				<i class="fas fa-tags fa-fw"></i>
 				</button>
-				<div class="dropdown-menu  dropdown-menu-right"></div>
+				<div class="dropdown-menu ptagsmenu dropdown-menu-right"></div>
 			</div>
 			<button type="button" class="cselect icontip align-middle" title="表示するカラム">
-			<i class="fas fa-table"></i>
+			<i class="fas fa-table fa-fw"></i>
 			</button>
 			<button type="button" class="compare icontip align-middle" title="表示中の行の比較グラフを表示">
-			<i class="fas fa-chart-bar"></i>
+			<i class="fas fa-chart-bar fa-fw"></i>
 			</button>
 			<button type="button" class="copy icontip align-middle" data-sorthash="" title="今の状態のリストのURLをコピー">
-			<i class="fas fa-link"></i>
+			<i class="fas fa-link fa-fw"></i>
 			</button>
 			</div>
-			<div class="updated">7/23 7:05 更新</div>
+			<div class="updated">7/23 16:11 更新</div>
 		</div>
 	</div>
 
@@ -1359,7 +1369,7 @@ $(function() {
 		if (i % 5 == 0) {
 			//$('.dropdown-menu').append('<div>');
 		}
-		$('.dropdown-menu').append('<button type="button" class="btn btn-outline-dark btn-sm tag" data-tag="'+sortable[i][0]+'">'+sortable[i][0]+' <span class="badge badge-pill badge-light">'+sortable[i][1]+'</span></button>');
+		$('.ptagsmenu').append('<button type="button" class="btn btn-outline-dark btn-sm tag" data-tag="'+sortable[i][0]+'">'+sortable[i][0]+' <span class="badge badge-pill badge-light">'+sortable[i][1]+'</span></button>');
 		if (i % 5 == 4) {
 			//$('.dropdown-menu').append('</div>');
 		}
@@ -1385,6 +1395,15 @@ $(function() {
 		window.open('https://twitter.com/srdxsa');
 	});
 
+	$('.nogiobitable').on('click', function(event) {
+		window.open('https://aknog.github.io/nogiobi/');
+	});
+	$('.nogiobiaftertalk').on('click', function(event) {
+		window.open('https://aknog.github.io/nogiobi/aftertalk.txt');
+	});
+	$('.dropdown-item.srmemo').on('click', function(event) {
+		$('#srmemo').modal('show');
+	});
 	/*$('#main tbody tr').each(function(index, element) {
 		$(this).on('click', function() {
 			key = $(this).attr('data-key');
@@ -1449,6 +1468,33 @@ $('a.info').on('click', function(event) {
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="srmemo" tabindex="-1" role="dialog" aria-labelledby="srmemoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="srmemoLabel">SHOWROOMの仕様に関するメモ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	    <p>SHOWROOMは負荷軽減のため、人の多い部屋では一部のデータを間引いている</p>
+		<p>間引かれるデータはコメント、無料ギフト、少額ギフト</p>
+		<p>無料ギフトとは星と種、少額ギフトとはだるま(100未満)、花、小判、ハート(100未満)、音符、うまい、かわいいのこと</p>
+		<p>間引かれたデータはコメントやギフトを送った本人の画面上には見えていて、SHOWROOMのサーバ側にも送られているが、他の視聴者には送られていないので見えていない</p>
+		<p>画面上のアバターの位置(ポイント順)が上位であるほど間引かれにくく、下位であるほど間引かれやすい</p>
+		<p>コメントは部屋のコメント総数が10秒あたり約50件(2019/05/22以降は約35件)を超えないようになっていて、これは配信者側の可読性を保つ意味もあると思われる</p>
+		<p></p>
+		<small>参考<br>
+			<a href="https://dev.classmethod.jp/report/denatechcon-2018-showroom/">https://dev.classmethod.jp/report/denatechcon-2018-showroom/</a><br>
+			<a href="https://www.slideshare.net/dena_tech/showroom-html5-88373778">https://www.slideshare.net/dena_tech/showroom-html5-88373778</a><br>
+		</small>
+	  </div>
+    </div>
+  </div>
+</div>
+
 </div>
 </div>
 </body></html>
