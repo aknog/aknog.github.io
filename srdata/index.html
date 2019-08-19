@@ -410,6 +410,7 @@ th .btn {
 					<div class="dropdown-menu  dropdown-menu-right">
 						<a class="dropdown-item nogiobitable">のぎおび周回表</a>
 						<a class="dropdown-item nogiobiaftertalk">過去ののぎおびアフタートーク</a>
+						<a class="dropdown-item hinatazakadayori">過去の日向坂だより</a>
 						<a class="dropdown-item srmemo">SHOWROOMの仕様に関するメモ</a>
 					</div>
 				</div>
@@ -432,7 +433,7 @@ th .btn {
 				<i class="fas fa-link fa-fw"></i>
 				</button>
 			</div>
-			<div class="updated">8/19 19:47 更新</div>
+			<div class="updated">8/20 8:32 更新</div>
 		</div>
 	</div>
 
@@ -1438,6 +1439,9 @@ $(function() {
 	});
 	$('.nogiobiaftertalk').on('click', function(event) {
 		window.open('https://aknog.github.io/nogiobi/aftertalk.txt');
+	});
+	$('.hinatazakadayori').on('click', function(event) {
+		window.open('https://aknog.github.io/nogiobi/hinatazakadayori.txt');
 	});
 	$('.dropdown-item.srmemo').on('click', function(event) {
 		$('#srmemo').modal('show');
