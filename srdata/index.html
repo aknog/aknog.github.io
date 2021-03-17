@@ -416,8 +416,9 @@ th .btn {
 					</button>
 					<div class="dropdown-menu  dropdown-menu-right">
 						<a class="dropdown-item nogiobitable">のぎおび周回表</a>
-						<a class="dropdown-item nogiobiaftertalk">過去ののぎおびアフタートーク</a>
-						<a class="dropdown-item hinatazakadayori">過去の日向坂だより他</a>
+						<a class="dropdown-item smartnogizaka">過去のスマートニュース乃木坂46動画</a>
+						<a class="dropdown-item smartsakurazaka">過去のスマートニュース櫻坂46動画</a>
+						<a class="dropdown-item smarthinatazaka">過去のスマートニュース日向坂46動画</a>
 						<a class="dropdown-item srmemo">SHOWROOMの仕様に関するメモ</a>
 					</div>
 				</div>
@@ -440,7 +441,7 @@ th .btn {
 				<i class="fas fa-link fa-fw"></i>
 				</button>
 			</div>
-			<div class="updated">3/17 20:40 更新</div>
+			<div class="updated">3/17 21:10 更新</div>
 		</div>
 	</div>
 
@@ -2117,11 +2118,14 @@ $(function() {
 	$('.nogiobitable').on('click', function(event) {
 		window.open('https://aknog.github.io/nogiobi/');
 	});
-	$('.nogiobiaftertalk').on('click', function(event) {
-		window.open('https://aknog.github.io/nogiobi/aftertalk.txt');
+	$('.smartnogizaka').on('click', function(event) {
+		window.open('https://aknog.github.io/nogiobi/nogizaka.txt');
 	});
-	$('.hinatazakadayori').on('click', function(event) {
-		window.open('https://aknog.github.io/nogiobi/hinatazakadayori.txt');
+	$('.smartsakurazaka').on('click', function(event) {
+		window.open('https://aknog.github.io/nogiobi/sakurazaka.txt');
+	});
+	$('.smarthinatazaka').on('click', function(event) {
+		window.open('https://aknog.github.io/nogiobi/hinatazaka.txt');
 	});
 	$('.dropdown-item.srmemo').on('click', function(event) {
 		$('#srmemo').modal('show');
