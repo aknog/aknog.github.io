@@ -467,7 +467,7 @@ th .btn {
 				<i class="fas fa-link fa-fw"></i>
 				</button>
 			</div>
-			<div class="updated">4/7 21:56 更新</div>
+			<div class="updated">4/7 22:38 更新</div>
 		</div>
 	</div>
 
@@ -2499,10 +2499,6 @@ $('.room').click(function (e) { //Offset mouse Position
 	}
 });
 
-if (document.querySelector('.table-responsive').scrollWidth > document.querySelector('.table-responsive').clientWidth) {
-	$('.horizontal_scroll_alert').show();
-}
-
 $('a').on('click', function (event) {
 	window.open($(this).attr('href'));
 	return false;
@@ -3104,6 +3100,19 @@ $(function() {
 	$('.updated').on('click', function() {
 		$('.fa-chart-line').show();
 	});*/
+
+	function showHorizontalScrollAlert() {
+		var tabler = document.querySelector('.table-responsive');
+		if (tabler.scrollWidth > tabler.clientWidth) {
+			$('.horizontal_scroll_alert').show();
+		} else {
+			$('.horizontal_scroll_alert').hide();
+		}
+	}
+	showHorizontalScrollAlert();
+	$(window).resize(function () {
+		showHorizontalScrollAlert();
+	});
 });
 
 $('a.info').on('click', function(event) {
