@@ -467,7 +467,7 @@ th .btn {
 				<i class="fas fa-link fa-fw"></i>
 				</button>
 			</div>
-			<div class="updated">4/8 2:19 更新</div>
+			<div class="updated">4/8 2:20 更新</div>
 		</div>
 	</div>
 
@@ -2486,8 +2486,6 @@ function createElementFromHTML(htmlString) {
 $('.room').click(function (e) { //Offset mouse Position
 	var posX = $(this).offset().left;
 	var posXrem = Math.floor(convertPxToRem(e.pageX - posX));
-	console.log(posXrem);
-	console.log($(this).data('group')[posXrem]);
 	switch ($(this).data('group')[posXrem]) {
 		case 'n':
 			$(this).find('.tag[data-tag="乃木坂46"]').click();
