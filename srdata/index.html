@@ -467,7 +467,7 @@ th .btn {
 				<i class="fas fa-link fa-fw"></i>
 				</button>
 			</div>
-			<div class="updated">4/7 22:58 更新</div>
+			<div class="updated">4/8 2:19 更新</div>
 		</div>
 	</div>
 
@@ -2486,15 +2486,21 @@ function createElementFromHTML(htmlString) {
 $('.room').click(function (e) { //Offset mouse Position
 	var posX = $(this).offset().left;
 	var posXrem = Math.floor(convertPxToRem(e.pageX - posX));
+	console.log(posXrem);
+	console.log($(this).data('group')[posXrem]);
 	switch ($(this).data('group')[posXrem]) {
 		case 'n':
 			$(this).find('.tag[data-tag="乃木坂46"]').click();
+			break;
 		case 'k':
 			$(this).find('.tag[data-tag="欅坂46"]').click();
+			break;
 		case 's':
 			$(this).find('.tag[data-tag="櫻坂46"]').click();
+			break;
 		case 'h':
 			$(this).find('.tag[data-tag="日向坂46"]').click();
+			break;
 		default:
 	}
 });
@@ -2509,17 +2515,19 @@ $('.room_img').on('click', function (event) {
 $('.tag').on('click', function (event) {
 	tag = $(this).attr('data-tag');
 	currentinput = $(".myInput").val();
-	if (currentinput.indexOf("tag:"+tag) > -1) {
-		var regex = new RegExp("tag:" + tag);
-		newinput = newinput.replace(regex, '');
+	currentinput = currentinput.replace(/tag:(\S+( \d+期生)?)/g, "tag:@$1@");
+	if (currentinput.indexOf("tag:@" + tag + "@") > -1) {
+		var regex = new RegExp("tag:@" + tag + "@");
+		newinput = currentinput.replace(regex, '');
 		newinput = newinput.replace(/^ && /, '');
 		newinput = newinput.replace(/ && $/, '');
 		newinput = newinput.replace(/( && )+/g, ' && ');
 	} else {
-		newinput = currentinput+" && tag:"+tag;
+		newinput = currentinput+" && tag:@" + tag + "@";
 		newinput = newinput.replace(/^ && /, '');
 		newinput = newinput.trim();
 	}
+	newinput = newinput.replace(/tag:@(.+?)@/g, "tag:$1");
 	$(".myInput").val(newinput);
 	if (newinput == '') {
 		$("#main").trigger('filterReset');
