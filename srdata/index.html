@@ -19,7 +19,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/css/tooltipster.bundle.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css">
@@ -384,21 +384,21 @@ th .btn {
 	margin: 0 0.3rem;
 }
 .twbtn {
-	background-color: #1b95e0;
+	color: black;
+	background-color: white;
+	border-color: white;
 	padding: 0 0.5rem;
+}
+.twbtn span {
+	margin-left: 0.25rem;
 }
 .twbtn a:hover {
 	text-decoration: none;
 }
 .twbtn:hover {
-	background-color: #0c7abf;
-}
-.twbtn span {
-	font-weight: bold;
-}
-.twbtn .fa-twitter {
 	color: white;
-	font-weight: bold;
+	background-color: black;
+	border-color: black;
 }
 </style>
 </head><body>
@@ -425,7 +425,12 @@ th .btn {
 		<div class="title d-inline-flex align-items-center">
 			<div>乃木坂46・櫻坂46・日向坂46 SHOWROOMデータ</div>
 			<div class="d-inline-flex align-items-center twbtnc">
-				<button type="button" class="btn btn-primary btn-sm twbtn"><i class="fab fa-twitter"></i><span>@srdxsa</span></button>
+				<button type="button" class="btn btn-primary btn-sm twbtn">
+					<div class="d-flex align-items-center">
+						<i class="fa-brands fa-x-twitter"></i>
+						<span>@srdxsa</span>
+					</div>
+				</button>
 			</div>
 		</div>
 		<div class="" style="width: 32px;"></div>
@@ -467,7 +472,7 @@ th .btn {
 				<i class="fas fa-link fa-fw"></i>
 				</button>
 			</div>
-			<div class="updated">8/14 23:04 更新</div>
+			<div class="updated">8/14 23:42 更新</div>
 		</div>
 	</div>
 
